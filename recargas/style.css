@@ -1,0 +1,165 @@
+/* pagos.css */
+
+/*= require dataTables/datatables.min.css */
+/*= require touchspin/jquery.bootstrap-touchspin.min.css */
+@font-face {
+  font-family: 'footable';
+  src: url('src/fonts/footable.woff') format('woff');
+  /* Agrega otros formatos si es necesario (e.g., woff2, ttf, etc.) */
+}
+
+* {
+  font-family: 'footable', sans-serif;
+}
+
+body{
+  background-color: #f2f4f7;
+}
+
+main {
+  /* border: 1px solid red; */
+  width: 250px;
+  margin: auto;
+}
+
+header {
+  /* border: 1px solid blue; */
+  text-align: center;
+}
+
+header img {
+  margin-top: 20px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+header h4 {
+  color: #002655;
+  margin-bottom: 20px;
+}
+
+#continuar {
+  margin-top: 15px;
+  width: 100%;
+}
+
+section {
+  border: 2px solid #002655;
+  /* border: 2px solid #00ABFF; */
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+section header {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+section form {
+  text-align: center;
+}
+
+section p {
+  text-align: justify;
+}
+
+section small {
+  display: block;
+  text-align: justify;
+}
+
+#centrada {
+  text-align: center;
+}
+
+#total {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.input-style {
+  width: 100%;
+}
+
+.formulario{
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  height: 210px;
+  justify-content: space-between;
+}
+
+.formulario-seccion{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60px;
+}
+
+h4{
+  font-family: 'footable', sans-serif;
+  font-weight: bold;
+}
+
+#result-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#loading {
+  display: none;
+  margin-top: 10px;
+  color: blue;
+  margin: auto;
+}
+
+.waybox-button {
+  border: 2px solid #002655;
+  /* display: inline-block; */
+  height: 40px;
+  line-height: 40px;
+  background-color: rgb(26, 69, 148);
+  border: 0px;
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0px 16px;
+  color: white;
+  cursor: pointer;
+  -webkit-font-smoothing: subpixel-antialiased;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.waybox-button::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 229.5 229.5'%3E%3Cpath fill='%23fff' d='M214.419 32.12A7.502 7.502 0 0 0 209 25.927L116.76.275a7.496 7.496 0 0 0-4.02 0L20.5 25.927a7.5 7.5 0 0 0-5.419 6.193c-.535 3.847-12.74 94.743 18.565 139.961 31.268 45.164 77.395 56.738 79.343 57.209a7.484 7.484 0 0 0 3.522 0c1.949-.471 48.076-12.045 79.343-57.209 31.305-45.217 19.1-136.113 18.565-139.961zm-40.186 53.066l-62.917 62.917c-1.464 1.464-3.384 2.197-5.303 2.197s-3.839-.732-5.303-2.197l-38.901-38.901a7.497 7.497 0 0 1 0-10.606l7.724-7.724a7.5 7.5 0 0 1 10.606 0l25.874 25.874 49.89-49.891a7.497 7.497 0 0 1 10.606 0l7.724 7.724a7.5 7.5 0 0 1 0 10.607z'/%3E%3C/svg%3E");
+  background-size: contain;
+  vertical-align: middle;
+  transform: translateY(-8%);
+  /* margin: auto; */
+
+}
+
+.formulario-label{
+  font-weight: bold;
+}
+
+.btn-outline-danger{
+  width: 100%;
+  height: 45px;
+}
+
+.cortar-texto{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
+}

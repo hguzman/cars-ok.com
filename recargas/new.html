@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recargas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="src/images/carsok.png" alt="Logo">
+      <h4>PAGO Y RECARGA DE SALDO</h4>
+    </header>
+    <form id="myForm" class="formulario">
+      <div class="formulario-seccion">
+        <label for="value" class="formulario-label">Email registrado</label>
+        <input id="email" name="email" type="email" required placeholder="example@gmail.com">
+      </div>
+      <div class="formulario-seccion">
+        <label for="pago_creditos" class="formulario-label">Valor de recarga</label>
+        <input id="value" name="value" class="input-style" type="number" placeholder="1500" required>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg" onclick="postData()" id="continuar">Continuar</button>
+    </form>
+    <div id="loading">Loading...</div>
+    <div id="result-container"></div>
+    <button type="button" class="btn btn-outline-danger" id="volver" onclick="returnForm()">Volver</button>
+
+    <hr>
+    <section>
+      <header>IMPORTANTE</header>
+      <small>
+        - El monto mínimo de recarga es de $ 1.500,00 COP
+      </small>
+      </br>
+      <small>
+        - En caso de utilizar un correo electrónico no registrado en la plataforma Fleteo,
+        se generará automáticamente una nueva cuenta asociada con la recarga.
+      </small>
+    </section>
+  </main>
+  <script>
+    document.getElementById('volver').style.display = 'none';
+    function returnForm() {
+      const email = document.getElementById('email').value;
+      const value = document.getElementById('value').value;
+      const resultContainer = document.getElementById('result-container');
+      const volver = document.getElementById('volver');
+      try {
+        document.getElementById('result-container').style.display = 'none';
+        document.getElementById('myForm').style.display = 'block';
+        document.getElementById('volver').style.display = 'none';
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    console.info('Hola mundo :D');
+    function getQueryParam(name) {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    // Obtener el valor del parámetro 'variable' de la URL
+    const variableValue = getQueryParam('email');
+    setEmail(variableValue);
+    function setEmail(email) {
+      var emailInput = document.getElementById('email');
+      emailInput.value = email;
+    }
+
+    function showLoading() {
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('result-container').style.display = 'none';
+    }
+
+    // function hideForm() {
+    //   document.getElementById('myForm').style.display = 'none';
+    // }
+
+    function hideLoading() {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('result-container').style.display = 'block';
+    }
+
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    function isValidNumber(value) {
+      return /^[1-9]\d*$/.test(value);
+    }
+
+    function postData() {
+      const email = document.getElementById('email').value;
+      const value = document.getElementById('value').value;
+      const resultContainer = document.getElementById('result-container');
+
+      if (!isValidEmail(email)) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Por favor, ingrese un correo electrónico válido.",
+        });
+        return;
+      }
+
+      if (!isValidNumber(value)) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Por favor, ingrese un valor numérico valido.",
+        });
+        return;
+      }
+
+      showLoading();
+
+      fetch('https://7ujbasdx83.execute-api.us-east-1.amazonaws.com/v1/payments/new', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, value })
+      })
+      .then(response => response.text())
+      .then(htmlResult => {
+        hideLoading();
+		document.getElementById('myForm').style.display = 'none';
+        resultContainer.innerHTML = htmlResult;
+        resultContainer.innerHTML = htmlResult;
+        resultContainer.style.border = '2px solid black';
+        resultContainer.style.borderRadius = '10px';
+        resultContainer.style.padding = '10px';
+        resultContainer.style.marginBottom = '18px';
+        document.getElementById('volver').style.display = 'block';
+      })
+      .catch(error => {
+        hideLoading();
+        console.error('Error:', error);
+      });
+    }
+  </script>
+</body>
+</html>
