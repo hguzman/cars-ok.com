@@ -58,7 +58,6 @@
       }
     }
 
-    console.info('Hola mundo :D');
     function getQueryParam(name) {
       try {
         const urlParams = new URLSearchParams(window.location.search);
@@ -68,7 +67,6 @@
       }
     }
 
-    // Obtener el valor del parámetro 'variable' de la URL
     const variableValue = getQueryParam('email');
     setEmail(variableValue);
     function setEmail(email) {
@@ -81,9 +79,6 @@
       document.getElementById('result-container').style.display = 'none';
     }
 
-    // function hideForm() {
-    //   document.getElementById('myForm').style.display = 'none';
-    // }
 
     function hideLoading() {
       document.getElementById('loading').style.display = 'none';
@@ -117,7 +112,7 @@
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Por favor, ingrese un valor numérico valido.",
+          text: "Por favor, ingrese un valor valido.",
         });
         return;
       }
