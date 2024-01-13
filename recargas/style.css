@@ -18,7 +18,7 @@ body{
 
 main {
   /* border: 1px solid red; */
-  width: 250px;
+  width: 300px;
   margin: auto;
 }
 
@@ -130,8 +130,7 @@ h4{
   color: white;
   cursor: pointer;
   -webkit-font-smoothing: subpixel-antialiased;
-  margin-left: 12%;
-  margin-right: 12%;
+  width: 100%;
 }
 
 .waybox-button::before {
