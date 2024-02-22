@@ -1040,3 +1040,7 @@ section.comments {
     visibility: hidden;
   }
 }
+
+#logo-app{
+  width: 190px;
+}
