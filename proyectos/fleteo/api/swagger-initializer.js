@@ -5,7 +5,7 @@ window.onload = function() {
   window.ui = SwaggerUIBundle({
     url: "https://raw.githubusercontent.com/hguzman/cars-ok.com/main/template.json",
     dom_id: '#swagger-ui',
-    deepLinking: true,
+    deepLinking: false,
     presets: [
       SwaggerUIBundle.presets.apis,
       SwaggerUIStandalonePreset

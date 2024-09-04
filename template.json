@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Fleteo`",
+    "title": "Fleteo",
     "description": "Software para consulta de automotores y personas",
     "termsOfService": "http://swagger.io/terms/",
     "contact": {
