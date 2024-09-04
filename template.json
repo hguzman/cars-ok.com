@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Fleteo",
-    "description": "Software para consulta de automotores y personas",
+    "description": "Software para consulta de automotores y personas que busca en RUNT",
     "termsOfService": "http://swagger.io/terms/",
     "contact": {
       "email": "hguzman@cars-ok.com"
