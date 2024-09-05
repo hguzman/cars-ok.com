@@ -3,7 +3,7 @@ window.onload = function() {
 
   // the following lines will be replaced by docker/configurator, when it runs in a docker-container
   window.ui = SwaggerUIBundle({
-    url: "https://raw.githubusercontent.com/hguzman/cars-ok.com/main/template.json",
+    url: "https://api-v2.fleteo.co/swagger",
     dom_id: '#swagger-ui',
     deepLinking: false,
     presets: [
