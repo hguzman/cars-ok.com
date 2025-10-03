@@ -51,8 +51,8 @@
                         <li><a class="page-scroll" href="#features">Características</a></li>
                         <li><a class="page-scroll" href="#team">Equipo</a></li>
                         <li><a class="page-scroll" href="#testimonials">Testimonios</a></li>
-                        <li><a class="page-scroll" href="recargas/new.html">Recargas</a></li>
                         <li><a class="page-scroll" href="#contact">Contactos</a></li>
+                        <li><a class="page-scroll" href="recargas/new.html">Recargas</a></li>
                     </ul>
                 </div>
             </div>
@@ -338,7 +338,6 @@
 </section> -->
 
 <section id="testimonials" class="navy-section testimonials" style="margin-top: 0">
-
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center wow zoomIn">
@@ -353,7 +352,6 @@
             </div>
         </div>
     </div>
-
 </section>
 <!-- <section class="comments gray-section" style="margin-top: 0">
     <div class="container">
@@ -588,6 +586,7 @@
     </div>
 </section> -->
 
+
 <section id="contact" class="gray-section contact">
     <div class="container">
         <div class="row m-b-lg">
@@ -629,13 +628,29 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
-                <p><strong>&copy; 2024 CarsOk</strong><br/> Empresa dedicada al desarrollo de software a la medida</p>
+            <div class="col-lg-12 text-center">
+                <div class="m-t-md m-b-md">
+                    <a href="https://fleteo.s3.us-east-1.amazonaws.com/documentos/AVISO+DE+PRIVACIDAD+CARSOK+S.A.S..pdf" target="_blank" rel="noopener" class="legal-link">Aviso de Privacidad</a> |
+                    <a href="https://fleteo.s3.us-east-1.amazonaws.com/documentos/POLA%CC%83_TICA+DE+TRATAMIENTO+DE+DATOS+PERSONALES+de+CARSOK+S.A.S..pdf" target="_blank" rel="noopener" class="legal-link">Política de Tratamiento de Datos</a> |
+                    <a href="https://fleteo.s3.us-east-1.amazonaws.com/documentos/TA%CC%83%C2%A9rminos+y+Condiciones+de+Uso+de+CARSOK+S.A.S..pdf" target="_blank" rel="noopener" class="legal-link">Términos y Condiciones de Uso</a>
+                </div>
+                <p class="footer-copyright">
+                    <strong>&copy; <span id="copyright-year"></span> CarsOk</strong>
+                    <br/>Empresa dedicada al desarrollo de software a la medida
+                </p>
             </div>
         </div>
     </div>
 </section>
-
+<script>
+// Cambia el año automáticamente en el footer
+document.addEventListener('DOMContentLoaded', function () {
+    var yearSpan = document.getElementById('copyright-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+});
+</script>
 <script src="js/jquery-2.1.1.js"></script>
 <script src="js/pace.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
